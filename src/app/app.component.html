@@ -1,10 +1,10 @@
 <div class="row">
   <form action="" class="col-12 m-4 text-center">
-    <input type="text" class="inputFeild w-50 border-1 rounded p-2" placeholder="try searching for 'ahmed'!"
+    <input type="text" class="inputFeild w-50 border-1 rounded p-2" placeholder="try searching for any name ex.'ahmed'!"
       [(ngModel)]="searchValue" name="search" (input)="onInputChange()">
   </form>
   <div class="col-12 col-sm-6 col-md-3" *ngFor="let elemnt of arr;let i = index;"
-    [ngClass]="{'d-none': searchValue.toLocaleLowerCase() =='ahmed' && elemnt.name!=='ahmed'}">
+    [ngClass]="{'d-none': searchValue && elemnt.name.toLowerCase() !== searchValue.toLowerCase()}">
     <div class="card m-4" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">{{elemnt.name}}</h5>
